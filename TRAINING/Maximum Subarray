@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int maxSoFar = INT_MIN;
+        int localMax = 0;
+        for(auto num: nums) {
+            localMax = max(num, localMax+num);
+            maxSoFar = max(maxSoFar, localMax);
+        }
+        return  maxSoFar;
+    }
+};
